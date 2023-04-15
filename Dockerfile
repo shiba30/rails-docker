@@ -1,4 +1,3 @@
-FROM node:15.0.1
 FROM ruby:3.0.2
 
 COPY --from=node /opt/yarn-* /opt/yarn
