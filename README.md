@@ -12,7 +12,6 @@ $ cd rails-docker
 ```
 $ vim Dockerfile
 
-FROM node:15.0.1
 FROM ruby:3.0.2
 
 COPY --from=node /opt/yarn-* /opt/yarn
@@ -32,6 +31,7 @@ RUN bundle install
 ADD package.json yarn.lock /repogitory_name/
 RUN yarn install
 ADD . /repogitory_name
+
 ```
 
 ### 3. docker-composeを作成する
