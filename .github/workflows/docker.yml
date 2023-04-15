@@ -18,8 +18,13 @@ jobs:
         docker-compose build
         docker-compose run --rm web bundle install
         docker-compose run --rm web yarn install --check-files
+    - name: use stable version of Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
     - name: build webpacker
       run: docker-compose run --rm web rails webpacker:compile
     - name: run tests
       run: docker-compose run --rm web rails test
+
 
